@@ -1,6 +1,7 @@
+
 class Customer(object):
 	"""Logging history for Customer"""
-	def __init__(self, arg):
+	def __init__(self):
 		self.bikes = 0
 		self.rentalBasis = 0
 		self.rentalTime = 0
@@ -28,3 +29,5 @@ class Customer(object):
 			return self.rentalTime, self.rentalBasis, self.bikes  
 		else:
 			return 0,0,0
+
+cs = Customer()
