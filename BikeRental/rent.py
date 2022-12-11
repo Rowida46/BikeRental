@@ -1,4 +1,15 @@
 from datetime import datetime
+from enum import Enum
+
+class RentalBasis(Enum):
+	"""
+	This class is created to get rid of and ditch this annoying string comparssion.
+	"""
+	daily = "DailyBasis"
+	weekly = "WeeklyBasis"
+	hourly = "HourlyBasis"
+
+
 class BikeRental(object):
 	"""docstring for bike rental shop"""
 	def __init__(self, stock = 0):
@@ -27,12 +38,12 @@ class BikeRental(object):
 			        	"\n Number of bikes should be positive!" if not n else ""
 			return error_msg
 
-	def rentBikeOnDailyBasis(self, n, perioed = "day"):
+	def rentBikeOnDailyBasis(self, n, perioed = RentalBasis.daily):
 		"""
         Rents a bike on daily basis to a customer.
         """
 		if n < self.stock:
-			now, cost = datetime.now(), " $20 "  if perioed == "day" else " $60 "                    
+			now, cost = datetime.now(), " $20 "  if perioed == RentalBasis.daily else " $60 "                    
 			print("You have rented {} bike(s) on daily basis today at {} hours.".format(n, now.hour))
 			print(f"You will be charged {cost} for each {perioed} per bike.")
 			print("We hope that you enjoy our service.")
@@ -60,13 +71,13 @@ class BikeRental(object):
 		return bill
 
 	def calc_bill(self, rentalBasis):
-		if rentalBasis == 1:
+		if rentalBasis == RentalBasis.hourly:
 			# hourly bill calculation
 			bill = round(rentalPeriod.seconds / 3600) * 5 * numOfBikes
-		elif rentalBasis == 2:
+		elif rentalBasis == RentalBasis.daily:
 			# daily bill calculation
 			bill = round(rentalPeriod.days) * 20 * numOfBikes
-		elif rentalBasis == 3:
+		elif rentalBasis == RentalBasis.weekly:
            	# weekly bill calculation
 			bill = round(rentalPeriod.days / 7) * 60 * numOfBikes	
 		return bill
