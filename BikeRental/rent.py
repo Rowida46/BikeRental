@@ -3,40 +3,47 @@ from enum import Enum
 
 class RentalBasis(Enum):
 	"""
-	This class is created to get rid of and ditch this annoying string comparssion.
+	This class is created to get rid of and ditch 
+	this annoying string comparssion & provide 
+	our provided Rental Basis.
 	"""
 	daily = "DailyBasis"
 	weekly = "WeeklyBasis"
 	hourly = "HourlyBasis"
 
 
-class BikeRental(object):
-	"""docstring for bike rental shop"""
+class BikeRental():
+	"""docstring for ClassName"""
 	def __init__(self, stock = 0):
-		self.stock = stock
+		self.__stock = stock
 
 	@property
 	def stock(self):
 		"""
         Displays the bikes currently available for rent in the shop.
         """
-		return f"We have currently {self.stock} bikes available to rent"
+		print(f"We have currently {self.__stock} bikes available to rent")
+		return self.__stock
+
+	@stock.setter
+	def stock(self, val):
+		self.__stock = val
 
 	def rentBikeOnHourlyBasis(self, n):
 		"""
         Rents a bike on hourly basis to a customer.
         """
-		if self.stock:
-			now = datetime.datetime.now()                      
+		if self.__stock and self.__stock > n and n > 0:
+			now = datetime.now()                      
 			print("You have rented a {} bike(s) on hourly basis today at {} hours.".format(n,now.hour))
 			print("You will be charged $5 for each hour per bike.")
 			print("We hope that you enjoy our service.")
 			self.stock -= n
 			return now
-		else :       
-			error_msg = f"Sorry! We have currently {self.stock} bikes available to rent." if not self.stock else "" + \
-			        	"\n Number of bikes should be positive!" if not n else ""
-			return error_msg
+		else :
+			error_msg = f"Sorry! We have currently {self.stock} bikes available to rent." if self.__stock < n else "Number of bikes should be positive!"       
+			print(error_msg)
+			return None
 
 	def rentBikeOnDailyBasis(self, n, perioed = RentalBasis.daily):
 		"""
@@ -99,3 +106,8 @@ class BikeRental(object):
 				return bill
 		else :
 			return "Are you sure you rented a bike with us?"
+
+
+
+
+

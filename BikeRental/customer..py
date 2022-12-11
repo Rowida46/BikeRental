@@ -18,3 +18,13 @@ class Customer(object):
 			print("Not a positive integer!")
 			return -1 
 		
+
+
+	def returnBike(self):
+		"""
+        Allows customers to return their bikes to the rental shop.
+        """
+		if self.rentalBasis and self.rentalTime and self.bikes:
+			return self.rentalTime, self.rentalBasis, self.bikes  
+		else:
+			return 0,0,0
