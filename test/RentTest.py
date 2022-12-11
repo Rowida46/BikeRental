@@ -1,9 +1,6 @@
 import unittest
 from datetime import datetime, timedelta
 import sys
-
-sys.path.append("..")
-
 from BikeRental.rent import BikeRental
 
 class BikeRentalTest(unittest.TestCase):
