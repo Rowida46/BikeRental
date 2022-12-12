@@ -9,8 +9,8 @@ class Customer(object):
 	
 	def request_Bike(self):
 		"""
-        Takes a request from the customer for the number of bikes.
-        """ 
+		Takes a request from the customer for the number of bikes.
+		""" 
 		bikes = input("How many bikes would you like to rent?")
 		# validate  input
 		try:
@@ -23,8 +23,8 @@ class Customer(object):
 
 	def returnBike(self):
 		"""
-        Allows customers to return their bikes to the rental shop.
-        """
+		Allows customers to return their bikes to the rental shop.
+		"""
 		if self.rentalBasis and self.rentalTime and self.bikes:
 			return self.rentalTime, self.rentalBasis, self.bikes  
 		else:

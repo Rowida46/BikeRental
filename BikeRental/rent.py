@@ -20,8 +20,8 @@ class BikeRental():
 	@property
 	def stock(self):
 		"""
-        Displays the bikes currently available for rent in the shop.
-        """
+		Displays the bikes currently available for rent in the shop.
+		"""
 		print(f"We have currently {self.__stock} bikes available to rent")
 		return self.__stock
 
@@ -31,8 +31,8 @@ class BikeRental():
 
 	def rentBikeOnHourlyBasis(self, n):
 		"""
-        Rents a bike on hourly basis to a customer.
-        """
+		Rents a bike on hourly basis to a customer.
+		"""
 		if self.__stock and self.__stock > n and n > 0:
 			now = datetime.now()                      
 			print("You have rented a {} bike(s) on hourly basis today at {} hours.".format(n,now.hour))
@@ -47,8 +47,8 @@ class BikeRental():
 
 	def rentBikeOnDailyBasis(self, n, perioed = RentalBasis.daily):
 		"""
-        Rents a bike on daily basis to a customer.
-        """
+		Rents a bike on daily basis to a customer.
+		"""
 		if n < self.stock:
 			now, cost = datetime.now(), " $20 "  if perioed == RentalBasis.daily else " $60 "                    
 			print("You have rented {} bike(s) on daily basis today at {} hours.".format(n, now.hour))
@@ -91,10 +91,10 @@ class BikeRental():
 
 	def returnBike(self, request):
 		"""
-        1. Accept a rented bike from a customer
-        2. Replensihes the inventory
-        3. Return a bill
-        """
+		1. Accept a rented bike from a customer
+		2. Replensihes the inventory
+		3. Return a bill
+		"""
 		rentalTime, rentalBasis, numOfBikes = request
 		# issue a bill only if all three parameters are not null!
 		if self.validate_bill(request):
