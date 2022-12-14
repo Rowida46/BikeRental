@@ -3,12 +3,7 @@ import sys
 
 sys.path.append("..")
 
-from BikeRental.rent import BikeRental
-from BikeRental.Customer import Customer
-
-def main():
-    shop = BikeRental()
-    customer = Customer()
+from unittest import main
 
 
 if __name__ == '__main__':

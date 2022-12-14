@@ -3,7 +3,7 @@ class Customer(object):
 	"""Logging history for Customer"""
 	def __init__(self):
 		self.bikes = 0
-		self.rentalBasis = 0
+		self.rentalBasis = ""
 		self.rentalTime = 0
 		self.bill = 0
 	
@@ -19,8 +19,6 @@ class Customer(object):
 			print("Not a positive integer!")
 			return -1 
 		
-
-
 	def returnBike(self):
 		"""
 		Allows customers to return their bikes to the rental shop.
