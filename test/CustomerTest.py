@@ -4,7 +4,7 @@ sys.path.append("..")
 import unittest
 from datetime import datetime, timedelta
 from BikeRental.Customer import Customer
-from BikeRental.rent import BikeRental, RentalBasis
+from BikeRental.RentStore import BikeRental, RentalBasis
 
 class CustomerTest(unittest.TestCase):
 	def test_return_Bike_with_valid_input(self):

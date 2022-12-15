@@ -28,7 +28,7 @@ Unit test module is written alongside the main program to rigorously test the cl
 BikeRental/
 |-- BikeRental/
 |   |-- Customer.py
-|   |-- rent.py
+|   |-- RentStore.py
 |
 |-- test/
 |   |-- CustomerTest

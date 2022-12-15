@@ -4,7 +4,7 @@ import sys
 
 sys.path.append("..")
 
-from BikeRental.rent import BikeRental, RentalBasis
+from BikeRental.RentStore import BikeRental, RentalBasis
 from BikeRental.Customer import Customer
 
 class BikeRentalTest(unittest.TestCase):
