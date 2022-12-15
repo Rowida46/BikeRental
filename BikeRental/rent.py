@@ -111,5 +111,3 @@ class BikeRental():
 		else :
 			print("Are you sure you rented a bike with us?")
 			return None
-
-

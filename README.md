@@ -1,4 +1,15 @@
 # BikeRental
+
+# Applied Concepts
+
+- Delegation 
+- Encapsulation
+- Enum
+- Decorators
+
+## Unit-Test
+Unit test module is written alongside the main program to rigorously test the classes and methods for errors. Most errors occur in Null values, negative values and non-integer inputs. Most of them have been taken care of.
+
  
 
 ## Customers can
@@ -15,15 +26,20 @@
 - display available inventory
 - take requests on hourly, daily and weekly basis by cross verifying stock
 
+## Project Structure 
+```bash
+BikeRental/
+|-- BikeRental/
+|   |-- Customer.py
+|   |-- rent.py
+|
+|-- test/
+|   |-- CustomerTest
+|   |-- RentTest.py
+|
+|-- README
+```
 
-### Applied Concepts
-
-- Delegation 
-- Encapsulation
-- Enum
-- Decorators
-
-### Unit-Test
-Unit test module is written alongside the main program to rigorously test the classes and methods for errors. Most errors occur in Null values, negative values and non-integer inputs. Most of them have been taken care of.
-
-
+### Initial Setup:
+* Clone the repository
+* Run the command `python3 main.py`
